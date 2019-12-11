@@ -1,5 +1,5 @@
 #include<iostream>
-//#include <bits/stdc++.h>
+
 using namespace std;
 
 int main()
@@ -11,7 +11,7 @@ int main()
     cin.getline(s,100);
  
     char *p =s;
-    bool flag=false;
+   
     while(*p!='\0')
     {
         if(*p==' ' && *(p+1)!=' '&& *(p+1)!='\0') //*(p+1) ignore the multiple white space and null character.
