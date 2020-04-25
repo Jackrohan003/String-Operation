@@ -1,9 +1,7 @@
-
 /*
-Hacker Rank Solution Repeated String
+Hacker rank Solution Repeated String
 
 */
-
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -17,28 +15,29 @@ public class Solution {
     // Complete the repeatedString function below.
     static long repeatedString(String s, long n) {
 
-         char[] chrIn = s.toCharArray(); 
-         int i = 0; long max = 0; long quo = n / chrIn.length;
-          long rem = n % chrIn.length;
-           while (i < chrIn.length)
-            { 
-                if (chrIn[i] == 'a')
-                     { 
-                         max++; 
-                    }
-                     
-                      i++; 
-            }
-             i = 0; 
-             max = max * quo;
+    long max=0;
+    int i=0;
+    
+    char ch[]=s.toCharArray();
+    long mod= n%s.length();
+    long q = n/s.length();
+    
+    while(i<s.length())
+    {
+        if(ch[i++]=='a')
+        max++;
+    }
+    max = max*q;// number of times a in string has same in Quationt
+    if(mod!=0)
+    {
+        i=0;
+        while(i<mod)
+        {
+            if(ch[i++]=='a')
+                max++;
+        }
+    }
 
-             while (i < rem) 
-             { if (chrIn[i] == 'a') 
-                { 
-                    max++; 
-                 } i++;
-
-            }
     return max;
 
     }
