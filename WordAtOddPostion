@@ -1,0 +1,30 @@
+import java.util.*;
+class words_atOddPosition
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        String s1,w1;
+        int i,p=0,len,c=0;
+        char ch;
+        System.out.println("Enter a Sentence");
+        s1=in.nextLine();
+        
+        s1=s1+" ";      
+        len=s1.length();
+        for(i=0;i<len;i++)
+        {
+            ch=s1.charAt(i);
+            if(ch==' ')
+            {
+                c++;
+                w1=s1.substring(p,i);
+                p=i+1;
+                if(c%2!=0)
+                {
+                    System.out.print(w1+" ");
+                }
+            }
+        }
+    }
+}
